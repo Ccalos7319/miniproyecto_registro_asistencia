@@ -40,7 +40,7 @@ class AlumnoController extends Controller
             $alumno->correo = $request->correo;
             $alumno->telefono = $request->telefono;
             $alumno->edad = $request->edad;
-            $alumno->asistencia = $request->asistencia;
+
             $alumno->save();
             return  $alumno;
         } catch (Exception $e) {
@@ -71,7 +71,7 @@ class AlumnoController extends Controller
             $alumno->correo = $request->correo;
             $alumno->telefono = $request->telefono;
             $alumno->edad = $request->edad;
-            $alumno->asistencia = $request->asistencia;
+         
             $alumno->save();
             return $alumno;
         } catch (\Exception $th) {

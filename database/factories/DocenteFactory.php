@@ -23,7 +23,7 @@ class DocenteFactory extends Factory
             'direccion'=>fake()->address(),
             'correo'=>fake()->email(),
             'telefono'=>fake()->phoneNumber(),
-            'edad'=>fake()->numberBetween(18,60),
+            
       
         ];
     }

@@ -23,7 +23,7 @@ class AlumnoFactory extends Factory
             'correo'=>fake()->email(),
             'telefono'=>fake()->phoneNumber(),
             'edad'=>fake()->numberBetween(18,60),
-            'asistencia'=>fake()->randomElement(['T', 'A', 'F']),
+           
         ];
     }
 }

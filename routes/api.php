@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Alumno_cursoController;
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\DocenteController;
+use App\Http\Controllers\MatriculaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -47,8 +49,19 @@ Route::controller(CursoController::class)->group(function () {
    
 });
 
-Route::controller(Alumno_cursoController::class)->group(function () {
-    Route::get('/alumno_curso','index');
-    Route::get('/alumno_curso/{id}','show');
-    Route::post('/alumno_curso', 'store');
+Route::controller(AsistenciaController::class)->group(function () {
+    Route::get('/asistencia', 'index');
+    Route::get('/asistencia/{id}', 'show');
+    Route::post('/asistencia', 'store');
+    Route::put('/asistencia/{id}', 'edit');
+    Route::delete('/asistencia/{id}', 'destroy');
+   
+});
+Route::controller(MatriculaController::class)->group(function () {
+    Route::get('/matricula', 'index');
+    Route::get('/matricula/{id}', 'show');
+    Route::post('/matricula', 'store');
+    Route::put('/matricula/{id}', 'edit');
+    Route::delete('/matricula/{id}', 'destroy');
+   
 });

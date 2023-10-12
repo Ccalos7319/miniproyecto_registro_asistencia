@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('correo');
             $table->string('telefono');
             $table->integer('edad');
-            $table->string('asistencia');
           
             $table->timestamps();
         });

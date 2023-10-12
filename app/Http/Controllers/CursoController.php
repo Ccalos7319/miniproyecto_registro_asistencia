@@ -12,8 +12,8 @@ class CursoController extends Controller
      */
     public function index()
     {
-       $curso = new Curso();
-       return $curso->all();
+        $curso = new Curso();
+        return $curso->all();
     }
 
     /**
@@ -30,8 +30,12 @@ class CursoController extends Controller
     public function store(Request $request)
     {
         try {
-           $curso = new Curso();
-           $curso->nombre =$request->curso;
+            $curso = new Curso();
+
+            $curso->nombre = $request->nombre;
+            $curso->codigo_curso = $request->codigo_curso;
+            $curso->descripcion = $request->descripcion;
+
             $curso->save();
             return $curso;
         } catch (\Exception $th) {
@@ -46,7 +50,6 @@ class CursoController extends Controller
     {
         $curso = new Curso();
         return $curso->find($id);
-
     }
 
     /**
@@ -55,10 +58,14 @@ class CursoController extends Controller
     public function edit($id, Request $request)
     {
         try {
-           $curso = Curso::find($id);
-           $curso->nombre =$request->curso;
-           $curso->save();
-           return $curso;
+            $curso = Curso::find($id);
+
+            $curso->nombre = $request->nombre;
+            $curso->codigo_curso = $request->codigo_curso;
+            $curso->descripcion = $request->descripcion;
+            
+            $curso->save();
+            return $curso;
         } catch (\Throwable $th) {
             //throw $th;
         }
@@ -77,9 +84,8 @@ class CursoController extends Controller
      */
     public function destroy(Curso $id)
     {
-       $curso = Curso::find($id);
-       $curso->delete();
-       return $curso;
-
+        $curso = Curso::find($id);
+        $curso->delete();
+        return $curso;
     }
 }
